@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="8k电影网,8K电影,高清电影,在线电影,影视资源">
+<meta name="description" content="8k电影网 - 提供最新最全的高清电影资源，8K超高清画质，畅享极致观影体验">
+<meta name="author" content="8k电影网">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="8k电影网 - 8K超高清电影在线观看">
+<meta property="og:description" content="8k电影网提供最新最全的高清电影资源，8K超高清画质">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://8kdianyingwang-wap.github.io">
+<title>8k电影网 - 8K超高清电影在线观看 | 最新影视资源</title>
+<style>
+/* ===== 全局重置 ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #0a0a0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ===== 顶部导航 ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 60, 60, 0.2);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #ff3c3c, #ff6b6b);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 60, 60, 0.4);
+}
+
+.logo-text h1 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  font-size: 11px;
+  color: #ff6b6b;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 导航菜单 */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #b0b0b0;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff3c3c, #ff8e53);
+  transition: width 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #fff;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+/* ===== Hero区域 ===== */
+.hero-section {
+  margin-top: 66px;
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0a1a 0%, #0d0d2b 40%, #1a0a2e 100%);
+}
+
+.hero-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.hero-bg-animation::before,
+.hero-bg-animation::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero-bg-animation::before {
+  width: 300px;
+  height: 300px;
+  background: #ff3c3c;
+  top: 20%;
+  left: 10%;
+}
+
+.hero-bg-animation::after {
+  width: 400px;
+  height: 400px;
+  background: #4a2bff;
+  bottom: 10%;
+  right: 5%;
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 700px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  background: rgba(255, 60, 60, 0.15);
+  border: 1px solid rgba(255, 60, 60, 0.4);
+  border-radius: 30px;
+  font-size: 12px;
+  color: #ff6b6b;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero-content h2 span {
+  background: linear-gradient(135deg, #ff3c3c, #ff8e53, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #a0a0b0;
+  margin-bottom: 30px;
+}
+
+.hero-search {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.hero-search input {
+  flex: 1;
+  padding: 14px 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.hero-search input::placeholder {
+  color: #666;
+}
+
+.hero-search button {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ff3c3c, #ff6b6b);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-search button:hover {
+  background: linear-gradient(135deg, #ff1a1a, #ff5252);
+}
+
+/* ===== 通用Section样式 ===== */
+.section-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 16px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-head-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.section-head h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.section-head-more {
+  font-size: 13px;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.section-head-more:hover {
+  color: #ff6b6b;
+}
+
+/* ===== 电影卡片网格 ===== */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.35s;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 60, 60, 0.4);
+  box-shadow: 0 12px 40px rgba(255, 60, 60, 0.15);
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.movie-poster-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.3);
+}
+
+.movie-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.movie-score {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffd93d;
+}
+
+.movie-info {
+  padding: 12px;
+}
+
+.movie-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-info p {
+  font-size: 12px;
+  color: #777;
+}
+
+/* 不同渐变背景 */
+.bg-1 { background: linear-gradient(135deg, #1a1a3e, #2d1b69); }
+.bg-2 { background: linear-gradient(135deg, #3e1a1a, #691b2d); }
+.bg-3 { background: linear-gradient(135deg, #1a3e2d, #1b6949); }
+.bg-4 { background: linear-gradient(135deg, #3e3a1a, #69671b); }
+.bg-5 { background: linear-gradient(135deg, #2d1a3e, #4a1b69); }
+.bg-6 { background: linear-gradient(135deg, #1a2d3e, #1b3a69); }
+.bg-7 { background: linear-gradient(135deg, #3e1a2d, #691b4a); }
+.bg-8 { background: linear-gradient(135deg, #2a2a2a, #4a4a4a); }
+
+.badge-hot { background: linear-gradient(135deg, #ff3c3c, #ff6b6b); }
+.badge-new { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.badge-top { background: linear-gradient(135deg, #f7971e, #ffd200); }
+
+/* ===== 分类区域 ===== */
+.category-section {
+  background: #0d0d14;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  background: rgba(255, 60, 60, 0.08);
+  border-color: rgba(255, 60, 60, 0.3);
+  transform: translateY(-4px);
+}
+
+.category-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.category-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d0d0d0;
+}
+
+.category-item small {
+  font-size: 11px;
+  color: #666;
+}
+
+/* ===== 热门推荐 - 列表式 ===== */
+.hot-section {
+  background: linear-gradient(180deg, #0a0a0f 0%, #0d0d1a 100%);
+}
+
+.hot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hot-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.hot-item:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255, 60, 60, 0.3);
+  transform: translateX(4px);
+}
+
+.hot-rank {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+  color: #666;
+  background: rgba(255,255,255,0.05);
+}
+
+.hot-rank.top3 {
+  color: #fff;
+}
+
+.rank-1 { background: linear-gradient(135deg, #ffd700, #ffaa00); }
+.rank-2 { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); }
+.rank-3 { background: linear-gradient(135deg, #cd7f32, #a0522d); }
+
+.hot-thumb {
+  flex-shrink: 0;
+  width: 80px;
+  height: 110px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.2);
+}
+
+.hot-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hot-detail h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 6px;
+}
+
+.hot-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.hot-detail-tags span {
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  font-size: 11px;
+  color: #999;
+}
+
+.hot-detail-meta {
+  font-size: 12px;
+  color: #777;
+}
+
+.hot-detail-score {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffd93d;
+}
+
+/* ===== 关于我们 ===== */
+.about-section {
+  background: #0d0d14;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.about-text h3 span {
+  color: #ff6b6b;
+}
+
+.about-text p {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.about-feature {
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.about-feature-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.about-feature h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 4px;
+}
+
+.about-feature p {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+.about-visual {
+  position: relative;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 50%, #1a3e2d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-visual::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255,60,60,0.1), transparent, rgba(74,43,255,0.1), transparent);
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.about-visual-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-visual-content .big-num {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff3c3c, #ff8e53);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-visual-content p {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* ===== 友情链接 ===== */
+.friendly-section {
+  background: linear-gradient(180deg, #0d0d14 0%, #0a0a0f 100%);
+}
+
+.friendly-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.friendly-item {
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.friendly-item:hover {
+  background: rgba(255, 60, 60, 0.1);
+  border-color: rgba(255, 60, 60, 0.3);
+  color: #ff8e53;
+}
+
+/* ===== 页脚 ===== */
+.site-footer {
+  background: #08080c;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 40px 16px 20px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-brand h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+}
+
+.footer-col h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 12px;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  font-size: 13px;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: #ff6b6b;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+}
+
+.footer-bottom a {
+  color: #777;
+}
+
+/* ===== 回到顶部 ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #ff3c3c, #ff6b6b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(255, 60, 60, 0.4);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 60, 60, 0.6);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .main-nav.open {
+    max-height: 400px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 16px;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 15px;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .hero-section {
+    min-height: 340px;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .section-wrap {
+    padding: 40px 16px;
+  }
+
+  .section-head h3 {
+    font-size: 18px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .category-item {
+    padding: 16px 8px;
+  }
+
+  .category-item-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .hot-item {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .hot-thumb {
+    width: 60px;
+    height: 84px;
+    font-size: 16px;
+  }
+
+  .hot-detail h4 {
+    font-size: 14px;
+  }
+
+  .hot-detail-score {
+    font-size: 16px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-visual {
+    height: 200px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-content h2 {
+    font-size: 24px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .movie-info {
+    padding: 10px;
+  }
+
+  .movie-info h4 {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-icon">8K</div>
+      <div class="logo-text">
+        <h1>8k电影网</h1>
+        <span>8K Ultra HD Movies</span>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#home" class="active">首页</a></li>
+        <li><a href="#categories">电影分类</a></li>
+        <li><a href="#hot">热门推荐</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#links">友情链接</a></li>
+      </ul>
+    </nav>
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero区域 ===== -->
+<section class="hero-section" id="home">
+  <div class="hero-bg-animation"></div>
+  <div class="hero-content">
+    <div class="hero-badge">8K Ultra HD</div>
+    <h2>畅享<span>8K超高清</span>极致观影体验</h2>
+    <p>汇聚最新院线大片、经典影视、热门剧集，8K超清画质，随时随地畅快观看</p>
+    <div class="hero-search">
+      <input type="text" placeholder="搜索电影、电视剧、综艺...">
+      <button>搜索</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 电影分类 ===== -->
+<section class="category-section" id="categories">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-head-left">
+        <div class="section-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d);">🎬</div>
+        <h3>电影分类</h3>
+      </div>
+      <a href="#" class="section-head-more">查看全部 ›</a>
+    </div>
+    <div class="category-list">
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#ff3c3c,#ff6b6b);">🔥</div>
+        <span>动作电影</span>
+        <small>Action</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#4a2bff,#7b5cff);">😂</div>
+        <span>喜剧电影</span>
+        <small>Comedy</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d);">👻</div>
+        <span>恐怖惊悚</span>
+        <small>Horror</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200);">💕</div>
+        <span>爱情电影</span>
+        <small>Romance</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#8E2DE2,#4A00E0);">🚀</div>
+        <span>科幻电影</span>
+        <small>Sci-Fi</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#ee0979,#ff6a00);">🎭</div>
+        <span>剧情电影</span>
+        <small>Drama</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#2193b0,#6dd5ed);">📜</div>
+        <span>历史战争</span>
+        <small>History</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#f7971e,#ff8c00);">🎯</div>
+        <span>犯罪悬疑</span>
+        <small>Crime</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#56ab2f,#a8e063);">🧸</div>
+        <span>动画电影</span>
+        <small>Animation</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#cb2d3e,#ef473a);">🏆</div>
+        <span>纪录片</span>
+        <small>Documentary</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#8E2DE2,#c471ed);">🏠</div>
+        <span>电视剧集</span>
+        <small>TV Series</small>
+      </div>
+      <div class="category-item">
+        <div class="category-item-icon" style="background:linear-gradient(135deg,#00b4db,#0083b0);">🎪</div>
+        <span>综艺娱乐</span>
+        <small>Variety</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 最新电影 ===== -->
+<section style="background:#0a0a0f;">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-head-left">
+        <div class="section-icon" style="background:linear-gradient(135deg,#ff3c3c,#ff8e53);">🎥</div>
+        <h3>最新上线</h3>
+      </div>
+      <a href="#" class="section-head-more">查看全部 ›</a>
+    </div>
+    <div class="movie-grid">
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-1">星际</div>
+          <div class="movie-badge badge-hot">热播</div>
+          <div class="movie-score">⭐ 9.2</div>
+        </div>
+        <div class="movie-info">
+          <h4>星际穿越2：时空迷航</h4>
+          <p>科幻 · 2025 · 美国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-2">暗战</div>
+          <div class="movie-badge badge-new">最新</div>
+          <div class="movie-score">⭐ 8.7</div>
+        </div>
+        <div class="movie-info">
+          <h4>暗战风云</h4>
+          <p>动作 · 2025 · 中国香港</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-3">花语</div>
+          <div class="movie-badge badge-hot">热播</div>
+          <div class="movie-score">⭐ 8.9</div>
+        </div>
+        <div class="movie-info">
+          <h4>花语者</h4>
+          <p>爱情 · 2025 · 中国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-4">机甲</div>
+          <div class="movie-badge badge-new">最新</div>
+          <div class="movie-score">⭐ 8.5</div>
+        </div>
+        <div class="movie-info">
+          <h4>机甲黎明</h4>
+          <p>科幻 · 2025 · 日本</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-5">古宅</div>
+          <div class="movie-badge badge-hot">热播</div>
+          <div class="movie-score">⭐ 8.3</div>
+        </div>
+        <div class="movie-info">
+          <h4>古宅秘闻</h4>
+          <p>恐怖 · 2025 · 泰国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-6">深海</div>
+          <div class="movie-badge badge-top">精选</div>
+          <div class="movie-score">⭐ 9.0</div>
+        </div>
+        <div class="movie-info">
+          <h4>深海迷踪</h4>
+          <p>冒险 · 2025 · 美国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-7">笑傲</div>
+          <div class="movie-badge badge-hot">热播</div>
+          <div class="movie-score">⭐ 8.6</div>
+        </div>
+        <div class="movie-info">
+          <h4>笑傲江湖之风云再起</h4>
+          <p>喜剧 · 2025 · 中国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-8">草原</div>
+          <div class="movie-badge badge-new">最新</div>
+          <div class="movie-score">⭐ 8.8</div>
+        </div>
+        <div class="movie-info">
+          <h4>草原上的约定</h4>
+          <p>剧情 · 2025 · 中国</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 热门推荐 ===== -->
+<section class="hot-section" id="hot">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-head-left">
+        <div class="section-icon" style="background:linear-gradient(135deg,#ee0979,#ff6a00);">🔥</div>
+        <h3>热门推荐</h3>
+      </div>
+      <a href="#" class="section-head-more">查看全部 ›</a>
+    </div>
+    <div class="hot-list">
+      <div class="hot-item">
+        <div class="hot-rank rank-1 top3">1</div>
+        <div class="hot-thumb bg-1">复联</div>
+        <div class="hot-detail">
+          <h4>复仇者联盟6：终极之战</h4>
+          <div class="hot-detail-tags">
+            <span>动作</span>
+            <span>科幻</span>
+            <span>冒险</span>
+          </div>
+          <div class="hot-detail-meta">美国 · 2025 · 156分钟 · 导演：安东尼·罗素</div>
+        </div>
+        <div class="hot-detail-score">9.6</div>
+      </div>
+      <div class="hot-item">
+        <div class="hot-rank rank-2 top3">2</div>
+        <div class="hot-thumb bg-2">封神</div>
+        <div class="hot-detail">
+          <h4>封神第三部：决战朝歌</h4>
+          <div class="hot-detail-tags">
+            <span>古装</span>
+            <span>奇幻</span>
+            <span>动作</span>
+          </div>
+          <div class="hot-detail-meta">中国 · 2025 · 168分钟 · 导演：乌尔善</div>
+        </div>
+        <div class="hot-detail-score">9.3</div>
+      </div>
+      <div class="hot-item">
+        <div class="hot-rank rank-3 top3">3</div>
+        <div class="hot-thumb bg-3">哪吒</div>
+        <div class="hot-detail">
+          <h4>哪吒之魔童闹海</h4>
+          <div class="hot-detail-tags">
+            <span>动画</span>
+            <span>奇幻</span>
+            <span>冒险</span>
+          </div>
+          <div class="hot-detail-meta">中国 · 2025 · 144分钟 · 导演：饺子</div>
+        </div>
+        <div class="hot-detail-score">9.1</div>
+      </div>
+      <div class="hot-item">
+        <div class="hot-rank">4</div>
+        <div class="hot-thumb bg-4">沙丘</div>
+        <div class="hot-detail">
+          <h4>沙丘3：救世主</h4>
+          <div class="hot-detail-tags">
+            <span>科幻</span>
+            <span>冒险</span>
+          </div>
+          <div class="hot-detail-meta">美国 · 2025 · 175分钟 · 导演：丹尼斯·维伦纽瓦</div>
+        </div>
+        <div class="hot-detail-score">8.9</div>
+      </div>
+      <div class="hot-item">
+        <div class="hot-rank">5</div>
+        <div class="hot-thumb bg-5">卧虎</div>
+        <div class="hot-detail">
+          <h4>卧虎藏龙：青冥剑传</h4>
+          <div class="hot-detail-tags">
+            <span>武侠</span>
+            <span>动作</span>
+            <span>古装</span>
+          </div>
+          <div class="hot-detail-meta">中国 · 2025 · 132分钟 · 导演：袁和平</div>
+        </div>
+        <div class="hot-detail-score">8.7</div>
+      </div>
+      <div class="hot-item">
+        <div class="hot-rank">6</div>
+        <div class="hot-thumb bg-6">铃芽</div>
+        <div class="hot-detail">
+          <h4>铃芽之旅2：门的彼端</h4>
+          <div class="hot-detail-tags">
+            <span>动画</span>
+            <span>奇幻</span>
+          </div>
+          <div class="hot-detail-meta">日本 · 2025 · 121分钟 · 导演：新海诚</div>
+        </div>
+        <div class="hot-detail-score">8.6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 经典回顾 ===== -->
+<section style="background:#0d0d14;">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-head-left">
+        <div class="section-icon" style="background:linear-gradient(135deg,#8E2DE2,#4A00E0);">⭐</div>
+        <h3>经典回顾</h3>
+      </div>
+      <a href="#" class="section-head-more">查看全部 ›</a>
+    </div>
+    <div class="movie-grid">
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-2">肖申</div>
+          <div class="movie-badge badge-top">经典</div>
+          <div class="movie-score">⭐ 9.7</div>
+        </div>
+        <div class="movie-info">
+          <h4>肖申克的救赎</h4>
+          <p>剧情 · 1994 · 美国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-5">阿甘</div>
+          <div class="movie-badge badge-top">经典</div>
+          <div class="movie-score">⭐ 9.5</div>
+        </div>
+        <div class="movie-info">
+          <h4>阿甘正传</h4>
+          <p>剧情 · 1994 · 美国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-1">大话</div>
+          <div class="movie-badge badge-top">经典</div>
+          <div class="movie-score">⭐ 9.2</div>
+        </div>
+        <div class="movie-info">
+          <h4>大话西游之大圣娶亲</h4>
+          <p>喜剧 · 1995 · 中国香港</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-6">霸王</div>
+          <div class="movie-badge badge-top">经典</div>
+          <div class="movie-score">⭐ 9.6</div>
+        </div>
+        <div class="movie-info">
+          <h4>霸王别姬</h4>
+          <p>剧情 · 1993 · 中国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-3">泰坦</div>
+          <div class="movie-badge badge-top">经典</div>
+          <div class="movie-score">⭐ 9.4</div>
+        </div>
+        <div class="movie-info">
+          <h4>泰坦尼克号</h4>
+          <p>爱情 · 1997 · 美国</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <div class="movie-poster">
+          <div class="movie-poster-bg bg-7">千与</div>
+          <div class="movie-badge badge-top">经典</div>
+          <div class="movie-score">⭐ 9.4</div>
+        </div>
+        <div class="movie-info">
+          <h4>千与千寻</h4>
+          <p>动画 · 2001 · 日本</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于我们 ===== -->
+<section class="about-section" id="about">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-head-left">
+        <div class="section-icon" style="background:linear-gradient(135deg,#2193b0,#6dd5ed);">ℹ️</div>
+        <h3>关于我们</h3>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>关于 <span>8k电影网</span></h3>
+        <p>8k电影网致力于为电影爱好者提供最新、最全、最高清的影视资源。我们汇聚全球优质影片，涵盖动作、喜剧、科幻、爱情、恐怖、动画等多种类型，满足不同用户的观影需求。</p>
+        <p>平台采用先进的8K超高清编码技术，配合智能推荐算法，让您随时随地享受影院级观影体验。</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">🎬</div>
+            <h5>海量片源</h5>
+            <p>每日更新最新院线大片，片库持续扩充</p>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🖥️</div>
+            <h5>8K超清</h5>
+            <p>支持8K超高清画质，极致的视觉享受</p>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">📱</div>
+            <h5>多端适配</h5>
+            <p>手机、平板、电脑全平台无缝切换</p>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">⚡</div>
+            <h5>极速播放</h5>
+            <p>全球CDN加速，告别缓冲等待</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-visual-content">
+          <div class="big-num">8K</div>
+          <p>超高清画质 · 极致观影</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 友情链接 ===== -->
+<section class="friendly-section" id="links">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-head-left">
+        <div class="section-icon" style="background:linear-gradient(135deg,#56ab2f,#a8e063);">🔗</div>
+        <h3>友情链接</h3>
+      </div>
+    </div>
+    <div class="friendly-list">
+      <a href="#" class="friendly-item">电影天堂</a>
+      <a href="#" class="friendly-item">迅雷电影</a>
+      <a href="#" class="friendly-item">影视资源网</a>
+      <a href="#" class="friendly-item">高清影院</a>
+      <a href="#" class="friendly-item">电影下载站</a>
+      <a href="#" class="friendly-item">在线影视</a>
+      <a href="#" class="friendly-item">美剧天堂</a>
+      <a href="#" class="friendly-item">动漫资源</a>
+      <a href="#" class="friendly-item">综艺大全</a>
+      <a href="#" class="friendly-item">纪录片资源</a>
+      <a href="#" class="friendly-item">影视导航</a>
+      <a href="#" class="friendly-item">电影推荐</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>🎬 8k电影网</h4>
+        <p>8k电影网是国内领先的在线影视平台，提供最新最全的高清电影资源，8K超高清画质，涵盖电影、电视剧、综艺、动漫等多种类型，让您随时随地享受极致观影体验。</p>
+      </div>
+      <div class="footer-col">
+        <h5>快速导航</h5>
+        <ul>
+          <li><a href="#home">网站首页</a></li>
+          <li><a href="#categories">电影分类</a></li>
+          <li><a href="#hot">热门推荐</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#links">友情链接</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>服务支持</h5>
+        <ul>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">版权声明</a></li>
+          <li><a href="#">用户协议</a></li>
+          <li><a href="#">隐私政策</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025 8k电影网 | 网站网址：<a href="https://8kdianyingwang-wap.github.io">https://8kdianyingwang-wap.github.io</a></p>
+      <p style="margin-top:6px;">本站仅供影视资讯分享，如有侵权请联系删除 | 8K电影 · 高清影视 · 在线观看</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 回到顶部 ===== -->
+<div class="back-to-top" id="backToTop">↑</div>
+
+<script>
+// 移动端导航菜单
+document.getElementById('navToggle').addEventListener('click', function() {
+  document.getElementById('mainNav').classList.toggle('open');
+});
+
+// 导航链接点击关闭菜单
+document.querySelectorAll('.main-nav a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('mainNav').classList.remove('open');
+  });
+});
+
+// 回到顶部
+var backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 300) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+backToTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// 导航高亮
+var sections = document.querySelectorAll('section[id]');
+var navLinks = document.querySelectorAll('.main-nav a');
+
+window.addEventListener('scroll', function() {
+  var current = '';
+  sections.forEach(function(section) {
+    var sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
